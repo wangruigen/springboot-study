@@ -1,0 +1,8 @@
+#测试环境配置
+spring:
+  datasource: #测试环境数据库配置
+    url: jdbc:oracle:thin:@localhost:1521/orcl
+    username: wzpt
+    password: wzpt
+server:
+  port: 8888

@@ -1,0 +1,4 @@
+server:
+  servlet:
+    context-path: /profile #项目名称
+  port: 8777 #端口号

@@ -1,0 +1,15 @@
+#生产环境配置
+spring:
+  datasource: #生产环境数据库配置
+    url: jdbc:oracle:thin:@localhost:1521/orcl
+    username: wzpt
+    password: wzpt
+server:
+  port: 7001
+
+logging:
+  config: classpath:logback-spring-prod.xml
+  path: D:/prodlog/ #统一日志路径及跟目录
+  file:
+    max-size: 10MB #日志文件最大值，参考值，实际值可在logback.xml定义
+    max-history: 365 #日志保存最大天数，参考值，实际值可在logback.xml定义

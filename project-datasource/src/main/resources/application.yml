@@ -1,0 +1,3 @@
+spring:
+  profiles:
+    active: h2 #使用H2数据库配置，请查看pom.xml.45行 文件说明

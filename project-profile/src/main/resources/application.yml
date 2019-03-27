@@ -1,0 +1,5 @@
+spring:
+  profiles:
+    active: prod #启动时执行application-dev.yml（开发环境）的配置
+  config:
+    location:/prod/ #配置文件路径

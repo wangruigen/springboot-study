@@ -1,0 +1,4 @@
+spring:
+  main:
+    banner-mode: "off" #关掉springboot启动的banner
+

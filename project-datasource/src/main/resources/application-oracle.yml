@@ -1,0 +1,54 @@
+spring:
+  #数据库连接配置，jdbc和连接池配置使用druid
+  datasource:
+    #jndi-name: wzDataSource #jndi方式连接数据库
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      #jdbc配置
+      url: jdbc:oracle:thin:@localhost:1521/orcl
+      username: xxxxx
+      password: xxxxx
+      #可选配置，根据url适配 driver-class-name: oracle.jdbc.OracleDrive
+      #连接池配置
+      #初始化连接数
+      initial-size: 5
+      #最大连接数
+      max-active: 10
+      #最小连接数
+      min-idle: 3
+      #获取连接等待时长（毫秒）
+      max-wait: 6000
+      #配置间隔多久才进行一次检测，检测需要关闭的空闲连接（毫秒）
+      time-between-eviction-runs-millis: 60000
+      #配置一个连接在池中最小生存的时间（毫秒）
+      min-evictable-idle-time-millis: 30000
+      #初始化校验查询sql
+      validation-query: SELECT 1 FROM DUAL
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
+      #配置web-stat-filter(enabled: true = url开启过滤资源)
+      web-stat-filter:
+        enabled: false
+        url-pattern: /*
+        #排除过滤的资源
+        exclusions: '*.gif,*.png,*.jpg,*.html,*.js,*.css,*.ico,/druid/*'
+        session-stat-enable: false
+      #配置stat-view-servlet(enabled: true = 开启web界面监控)
+      stat-view-servlet:
+        enabled: false
+        #登录用户名及密码
+        login-username: admin
+        login-password: admin
+        #false:取消重置功能。true:开启重置功能
+        reset-enable: false
+        #ip白名单
+        allow: ${system-config.whiteList}
+        #ip黑名单
+        #deny: '127.0.0.1'
+        #web监控界面url
+        url-pattern: /wzdata/druid/*
+server:
+  port: 8888
+  servlet:
+    context-path: /datasource
