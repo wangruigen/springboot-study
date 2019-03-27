@@ -19,3 +19,6 @@ restful aop client demo
 
 # project-simple
 简单发布restful api 项目
+
+
+webmvc项目：https://github.com/wangruigen/project-web-jsp
